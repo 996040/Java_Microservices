@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:annotation-config></context:annotation-config>
+
+<bean id = "E1" class = "com.zensar.Autowire_annotation.Employee" >
+<property name = "employeeId" value = "6161"></property>
+<property name = "employeeName" value = "Neeraj"></property>
+<property name = "employeeAge" value = "24"></property>
+ 
+</bean>
+
+<bean id = "department" class ="com.zensar.Autowire_annotation.Department" >
+<property name = "departmentName" value = "Testing"></property>
+<property name = "departmentId" value = "84"></property>
+
+</bean>
+
+<bean id = "dept" class ="com.zensar.Autowire_annotation.Department" >
+<property name = "departmentName" value = "HR"></property>
+<property name = "departmentId" value = "23"></property>
+
+</bean>
+
+    
+</beans>
