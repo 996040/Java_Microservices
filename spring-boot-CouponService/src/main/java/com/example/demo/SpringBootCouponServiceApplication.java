@@ -1,7 +1,9 @@
 package com.example.demo;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
@@ -14,8 +16,10 @@ public class SpringBootCouponServiceApplication {
 		System.out.println("Virat");
 	}
 	
-	public void run(String... args) throws Exception{
-		System.out.println("Yuvii");
+	@Bean
+	public ModelMapper getModelMapper() {
+		return new ModelMapper();
 	}
+
 
 }
