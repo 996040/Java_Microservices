@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.CouponDto;
@@ -40,10 +41,11 @@ public class CouponServiceImpl implements CouponService {
 	}
 
 	@Override
-	public List<CouponDto> getAllCoupons(int pageNumber, int pageSize) {
+	public List<CouponDto> getAllCoupons(int pageNumber, int pageSize,String sortBy,Direction dir) {
 //		List<Coupon>listOfCoupons = couponRepository.findAll();
 		List<CouponDto> listOfCouponDto= new ArrayList<CouponDto>();
-		Page<Coupon> findAll=couponRepository.findAll(PageRequest.of(pageNumber,pageSize));
+		
+		Page<Coupon> findAll=couponRepository.findAll(PageRequest.of(pageNumber,pageSize,dir,sortBy));
 		List<Coupon> content =findAll.getContent();
 		for(Coupon coupon:content) {
 //			listOfCouponDto.add(mapToDto(coupon));

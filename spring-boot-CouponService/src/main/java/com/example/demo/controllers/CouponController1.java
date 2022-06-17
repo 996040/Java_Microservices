@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -41,8 +42,10 @@ public class CouponController1 {
 	@GetMapping("/coupons")
 	public ResponseEntity<List<CouponDto>> getAllCoupons(
 			@RequestParam(value = "pageNumber", required = false, defaultValue = "0") int pageNumber,
-			@RequestParam(value = "pageSize", required = false, defaultValue = "0") int pageSize) {
-		return new ResponseEntity<List<CouponDto>>(couponService.getAllCoupons(pageNumber,pageSize), HttpStatus.OK);
+			@RequestParam(value = "pageSize", required = false, defaultValue = "5") int pageSize,
+			@RequestParam(value = "sortBy",required=false, defaultValue = "couponExpiry")String sortBy,
+			@RequestParam(value = "dir",required = false, defaultValue = "ASC")Direction dir){
+		return new ResponseEntity<List<CouponDto>>(couponService.getAllCoupons(pageNumber,pageSize,sortBy,dir), HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/coupons")
