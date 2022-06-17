@@ -2,8 +2,11 @@ package com.example.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+//@NamedQuery(name ="Coupon.test",query= "from Coupon s where s.couponExpiry=?1")
+//@NamedQuery(name= "Coupon.test1",query="from Coupon s where s.couponExpiry=?1 and s.couponCode=?2")
 public class Coupon {
 	
 	@Id
