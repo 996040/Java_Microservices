@@ -24,9 +24,10 @@ import com.zensar.entity.Product;
 import com.zensar.service.ProductService;
 
 @RestController
-@RequestMapping(value = "/product-api", produces = { MediaType.APPLICATION_JSON_VALUE,
-		MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE,
-				MediaType.APPLICATION_XML_VALUE })
+//@RequestMapping(value = "/product-api", produces = { MediaType.APPLICATION_JSON_VALUE,
+//		MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE,
+//				MediaType.APPLICATION_XML_VALUE })
+@RequestMapping(value = "/product-api")
 public class ProductController {
 
 	@Autowired
