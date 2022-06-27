@@ -24,7 +24,9 @@ import com.zensar.services.CouponService;
 @RequestMapping("/coupons")
 public class CouponController {
 	
-	private static Map<String,Coupon> couponRepo = new HashMap<>();
+	private String instanceName;
+	
+//	private static Map<String,Coupon> couponRepo = new HashMap<>();
 
 	@Autowired
 	private CouponService couponService;
@@ -37,7 +39,8 @@ public class CouponController {
 	// http://localhost:8080/coupons/MAX50 -> GET
 	@GetMapping("/{couponCode}")
 	public Coupon getCoupon(@PathVariable("couponCode") String couponCode) {
-		System.out.println("Hello");
+		System.out.println("Instance 1");
+//		System.out.println("Instance 2");
 		return couponService.getCoupon(couponCode);
 	}
 	
