@@ -16,15 +16,18 @@ spring:
 
   application:
     name: product-service
+  config:
+    import:
+    - optional:configserver:http://localhost:8888/
  
 eureka:
   client: 
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: true
 
- 
+  instance:
+    prefer-ip-address: true
 
-      
 
 
       
