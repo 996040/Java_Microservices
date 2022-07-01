@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 @SpringBootApplication
 @ComponentScan(basePackages= {"test","com.zensar"})
 @OpenAPIDefinition
-public class SpringBootDemoApplication{
+public class SpringBootDemoApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		System.out.println("Rohit");
@@ -31,8 +31,8 @@ public class SpringBootDemoApplication{
 		return new ModelMapper();
 	}
 	
-//	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-//		return super.configure(builder);
-//	}
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return super.configure(builder);
+	}
 
 }
