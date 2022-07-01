@@ -19,9 +19,10 @@ public class SpringBootDemoApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		System.out.println("Rohit");
+		System.out.println("Adding to git Repository");
 		
 		SpringApplication.run(SpringBootDemoApplication.class, args);
-		System.out.println("Virat");
+		System.out.println("Virat Kohlii");
 	}
 
 	

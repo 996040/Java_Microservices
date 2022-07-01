@@ -47,6 +47,11 @@ public class StudentController {
 		return new ResponseEntity<StudentDto>(studentService.getStudent(studentId), HttpStatus.OK);
 
 	}
+	@GetMapping(value = "/mystudents/{studentId}")
+	public ResponseEntity<StudentDto> getMyStudent(@PathVariable("studentId") int studentId) {
+		return new ResponseEntity<StudentDto>(studentService.getStudent(studentId), HttpStatus.OK);
+	}
+	
 
 //	@RequestMapping(value = {"/students","/ListOfstudents"},method = RequestMethod.GET)
 	@GetMapping(value = { "/students", "/listOfStudents" })
